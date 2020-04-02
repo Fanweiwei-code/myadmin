@@ -41,7 +41,7 @@ public class Role extends BaseEntity {
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "roles_menus", joinColumns = {@JoinColumn(name = "role_id",referencedColumnName = "id")}, inverseJoinColumns = {@JoinColumn(name = "menu_id",referencedColumnName = "id")})
     private Set<Menu> menus;
 

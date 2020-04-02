@@ -53,7 +53,7 @@ public class User extends BaseEntity {
     @Column(name = "last_password_reset_time")
     private Date lastPasswordResetTime;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles", joinColumns = {@JoinColumn(name = "user_id",referencedColumnName = "id")}, inverseJoinColumns = {@JoinColumn(name = "role_id",referencedColumnName = "id")})
     private Set<Role> roles;
 

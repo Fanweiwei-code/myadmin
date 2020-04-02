@@ -49,7 +49,7 @@ public class Menu extends BaseEntity {
     @Column(name = "pid",nullable = false)
     private Long pid;
 
-    @ManyToMany(mappedBy = "menus")
+    @ManyToMany(mappedBy = "menus",fetch = FetchType.EAGER)
     @JsonIgnore
     private Set<Role> roles;
 
