@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
+import javax.persistence.Transient;
 import javax.persistence.criteria.From;
 import java.util.Date;
 
@@ -21,5 +22,6 @@ public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificat
      * @return /
      */
     @Query("from User where username = ?1")
+    @Transient
     User findByUsername(String username);
 }

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.websocket.Session;
+
 /**
  * @author fanweiwei
  * @create 2020-04-01 20:34
@@ -16,17 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 //@RequestMapping("/system")
 public class SystemController {
-
     @RequestMapping("/login")
     public String toLogin(){
         return "login";
     }
 
-    @AnonymousAccess
+
     @RequestMapping("/index")
     public String toIndex(){
         return "index";
     }
+
     @RequestMapping("/hello")
     @ResponseBody
     public String hello(){

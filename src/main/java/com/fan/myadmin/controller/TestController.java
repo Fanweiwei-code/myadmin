@@ -1,7 +1,15 @@
 package com.fan.myadmin.controller;
 
+import com.fan.myadmin.annotation.AnonymousAccess;
+import com.fan.myadmin.entity.Role;
+import com.fan.myadmin.entity.User;
+import com.fan.myadmin.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Set;
 
 /**
  * @author fanweiwei
@@ -9,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestController {
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/emp/basic/test")
     public String test1(){
@@ -40,8 +51,13 @@ public class TestController {
         return "业绩统计接口";
     }
 
+    @AnonymousAccess
     @GetMapping("/test")
     public String test7(){
+
+        User admin = userService.findByUsername("admin");
+        Set<Role> roles = admin.getRoles();
+        System.out.println(admin);
         return "登陆就能访问的接口";
     }
 }
