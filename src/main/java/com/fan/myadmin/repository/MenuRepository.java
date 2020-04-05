@@ -31,5 +31,12 @@ public interface MenuRepository extends JpaRepository<Menu,Long> , JpaSpecificat
     @Query("from Menu where pid =?1")
     List<Menu> findByPid(long pid);
 
+    /**
+     * 根据菜单的 ID 查询
+     * @param id /
+     * @return /
+     */
+    @Query("from Menu where id =?1")
+    Menu findById(long id);
 
 }

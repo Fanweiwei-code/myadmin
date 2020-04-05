@@ -53,6 +53,9 @@ public class Menu extends BaseEntity {
     @JsonIgnore
     private Set<Role> roles;
 
+    @Transient
+    private Set<Menu> menus;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

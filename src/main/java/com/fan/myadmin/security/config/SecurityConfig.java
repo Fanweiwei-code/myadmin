@@ -49,6 +49,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     ApplicationContext applicationContext;
 
     @Autowired
+    MyAuthenticationSuccessHandler myAuthenticationSuccessHandler;
+
+    @Autowired
     private MySecurityMetadataSource mySecurityMetadataSource;
 
     @Autowired
@@ -111,7 +114,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 //指定自定义form表单请求的路径
                 .loginProcessingUrl("/user/login")
-                .successForwardUrl("/hello")
+                .successForwardUrl("/index")
+//                .successHandler(myAuthenticationSuccessHandler)
                 .permitAll()
 //              .and()
 //              .logout().deleteCookies("SESSION", "remember-me")

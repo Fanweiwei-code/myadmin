@@ -1,27 +1,102 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <script src="webjars/jquery/3.1.1/jquery.js"></script>
-    <script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="webjars/bootstrap/3.3.5/css/bootstrap.min.css"/>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/typicons/src/font/typicons.css">
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/static/assets/vendors/css/vendor.bundle.addons.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/static/assets/css/shared/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/static/assets/images/favicon.png" />
 </head>
-
 <body>
-<form action="/user/login" method="post">
-    <p>
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username"/>
-    </p>
-    <p>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password"/>
-    </p>
-    <!--<input type="hidden"                        6-->
-           <!--name="${_csrf.parameterName}"-->
-           <!--value="${_csrf.token}"/>-->
-    <button type="submit" class="btn">Log in</button>
-</form>
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth auth-bg-1 theme-one">
+            <div class="row w-100">
+                <div class="col-lg-4 mx-auto">
+                    <div class="auto-form-wrapper">
+                        <form action="/user/login" method="post">
+                            <div class="form-group">
+                                <label class="label">用户名</label>
+                                <div class="input-group">
+                                    <input type="text" name="username" class="form-control" placeholder="Username">
+                                    <div class="input-group-append">
+                        <span class="input-group-text">
+                          <i class="mdi mdi-check-circle-outline"></i>
+                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label">密码</label>
+                                <div class="input-group">
+                                    <input type="password" name="password" class="form-control" placeholder="*********">
+                                    <div class="input-group-append">
+                        <span class="input-group-text">
+                          <i class="mdi mdi-check-circle-outline"></i>
+                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary submit-btn btn-block" type="submit">登录</button>
+                            </div>
+                            <div class="form-group d-flex justify-content-between">
+                                <div class="form-check form-check-flat mt-0">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" checked> Keep me signed in </label>
+                                </div>
+                                <a href="#" class="text-small forgot-password text-black">Forgot Password</a>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-block g-login">
+                                    <img class="mr-3" src="/static/assets/images/file-icons/icon-google.svg" alt="">Log in with Google</button>
+                            </div>
+                            <div class="text-block text-center my-3">
+                                <span class="text-small font-weight-semibold">Not a member ?</span>
+                                <a href="register.html" class="text-black text-small">Create new account</a>
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="auth-footer">
+                        <li>
+                            <a href="#">Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#">Help</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms</a>
+                        </li>
+                    </ul>
+                    <p class="footer-text text-center">copyright © 2018 Bootstrapdash. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="/static/assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="/static/assets/vendors/js/vendor.bundle.addons.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="/static/assets/js/shared/off-canvas.js"></script>
+<script src="/static/assets/js/shared/misc.js"></script>
+<!-- endinject -->
 </body>
 </html>
